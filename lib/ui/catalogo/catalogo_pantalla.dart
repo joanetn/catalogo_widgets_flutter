@@ -1,3 +1,6 @@
+import 'package:catalogo/data/repositories/articulos_repository.dart';
+import 'package:catalogo/data/services/articulos_local_servce.dart';
+import 'package:catalogo/ui/prestamos/ui/ejemplo_datos_pantalla.dart';
 import 'package:flutter/material.dart';
 
 import 'text_ejemplos_pantalla.dart';
@@ -84,6 +87,22 @@ class CatalogoPantalla extends StatelessWidget {
               Navigator.of(context).push(
                 MaterialPageRoute<void>(
                   builder: (context) => const ScaffoldEjemplosPantalla(),
+                ),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.inventory_2_outlined),
+            title: const Text('Ejemplo con datos'),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute<void>(
+                  builder: (context) => EjemploDatosPantalla(
+                    repository: ArticulosRepository(
+                      service: const ArticulosLocalService(),
+                    ),
+                  ),
                 ),
               );
             },
