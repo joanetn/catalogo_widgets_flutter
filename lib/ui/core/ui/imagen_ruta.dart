@@ -16,7 +16,7 @@ class ImagenRuta extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Image.asset(
-        'assets/images/chat.png',
+        rutaAsset,
         width: panoramica ? 300 : 240,
         height: panoramica ? 120 : 180,
         fit: BoxFit.cover,

@@ -9,9 +9,20 @@ class CatalogoApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Catálogo de widgets',
+      theme: ThemeData(
+        colorScheme: ColorScheme.light(
+          primary: Color(0xff4058be),
+          surface: Color(0xfff4f7fb),
+        ),
+        scaffoldBackgroundColor: Color(0xfff4f7fb),
+        appBarTheme: AppBarTheme(
+          backgroundColor: Color(0xff4058be),
+          foregroundColor: Colors.white,
+        ),
+      ),
       home: CatalogoPantalla(),
     );
   }
